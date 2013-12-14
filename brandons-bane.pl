@@ -5,7 +5,7 @@ use warnings;
 # Brandon's Bane
 
 eval { die "in a fire!" };
-if ( @$ ) {
+if ( $@ ) {
     say "Quick! Deploy the heat shield!";
 }
 
