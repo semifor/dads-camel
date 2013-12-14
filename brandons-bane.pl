@@ -2,11 +2,13 @@
 use 5.12.1;
 use warnings;
 
-# Brandon's Bane
+# There's a better way!
 
-eval { die "in a fire!" };
-if ( $@ ) {
+use Try::Tiny;
+
+try { die "in a fire!" }
+catch {
     say "Quick! Deploy the heat shield!";
-}
+};
 
 say "All is well!"
