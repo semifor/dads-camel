@@ -1,0 +1,32 @@
+=head1 NAME
+
+Perl - This is not your father's camel!
+
+=head1 SYNOPSIS
+
+    perl -E 'say "Just another perl hacker"'
+
+=head1 DESCRIPTION
+
+This is a brief introduction to perl. If you don't already know perl, you
+should leave with enough knowledge to get started. If you do know perl, but
+it's been awhile since you used it, I hope you see something new and
+interesting.
+
+=head1 ABOUT
+
+This talk is presented entirely in perl syntax, using the vim editor and abuses
+git with L<https://github.com/gelisam/git-slides>. See L<INSTALL>.
+
+Find it on github at L<https://github.com/semifor/dads-camel>.
+
+=head1 AUTHOR
+
+Marc Mims <marc@moz.com> aka Work Dad
+
+@semifor on Twitter and elsewhere in cypberspace
+
+=head1 LICENSE
+
+This work is licensed under a Creative Commons Attribution 4.0 International
+License.  L<http://creativecommons.org/licenses/by/4.0/>
