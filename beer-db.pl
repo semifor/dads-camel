@@ -5,5 +5,5 @@ use lib 'lib';
 
 use Beer::DB;
 
-my $schema = Beer::DB->connect('dbi:SQLite:dbname=tmp/beer.db');
-$schema->deploy;
+my $schema = Beer::DB->connect('dbi:mysql:dbname=beer');
+say for $schema->deployment_statements;
