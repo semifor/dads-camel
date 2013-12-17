@@ -30,3 +30,12 @@ $schema->populate(Brewery => [
         { style => 'porter', name => 'Black Butte Porter' },
     ]],
 ]);
+
+# add some users in a single transaction
+$schema->txn_do(sub {
+    for my $rs ( $schema->resultset('User') ) {
+        for my $name ( qw/Marc Martin Casey Peter/ ) {
+            $rs->create({ name => $name });
+        }
+    }
+});
