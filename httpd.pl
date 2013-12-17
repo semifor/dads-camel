@@ -41,3 +41,5 @@ sub serve_beer {
 }
 
 # ab -n 1000 -c 100 'http://localhost:9090/'
+#
+# next: we need a database! lib/Beer/DB.pm
