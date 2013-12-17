@@ -2,6 +2,7 @@
 use 5.12.1;
 use warnings;
 use lib 'lib';
+use Lingua::EN::Inflect qw/WORDLIST PL_V/;
 
 use Beer::DB;
 
@@ -72,3 +73,20 @@ $schema->txn_do(sub {
         },
     });
 });
+
+{
+    # Who likes Stella
+    my $beer =
+        $schema->resultset('Beer')->search(
+            { 'me.name' => { -like => 'Stella%' }},
+            { prefetch => 'brewery' },
+        )->first;
+
+
+    my @fans = $beer->users->search({}, { order_by => 'name' })
+        ->get_column('name')->all;
+
+    # In the Queen's English, Oxford comma and all, mate!
+    say sprintf '%s %s %s.',
+        WORDLIST(@fans), PL_V('likes', scalar @fans), $beer->name;
+}
