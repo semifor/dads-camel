@@ -39,3 +39,36 @@ $schema->txn_do(sub {
         }
     }
 });
+
+# Martin and Peter drink Stella
+$schema->txn_do(sub {
+    my $users =
+        $schema->resultset('User')
+        ->search({ name => { -in => [ qw/Peter Martin/ ] }});
+
+    my $beer =
+        $schema->resultset('Beer')
+        ->search({ name => { -like => 'Stella%' }})
+        ->first;
+
+    $_->add_to_likes($beer) for $users->all;
+});
+
+# Marc likes all the beers!
+$schema->txn_do(sub {
+    # primary key search
+    my $user = $schema->resultset('User')->find(1);
+    my $rs = $schema->resultset('Beer')->search;
+    while ( my $beer = $rs->next ) {
+        $user->add_to_likes($beer);
+    }
+
+    # create rows in brewery, beer, and user_beer!
+    $user->add_to_likes({
+        name    => 'Guinness Extra Stout',
+        style   => 'stout',
+        brewery => {
+            name => 'Guinness Ltd.',
+        },
+    });
+});
