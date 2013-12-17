@@ -90,3 +90,5 @@ $schema->txn_do(sub {
     say sprintf '%s %s %s.',
         WORDLIST(@fans), PL_V('likes', scalar @fans), $beer->name;
 }
+
+# next: Moose! lib/Beer.pm
