@@ -9,3 +9,5 @@ my $server = Beer->new;
 for ( 1..6 ) {
     say $server->random_beer_please;
 }
+
+say "${ \$server->beers_requested } beers requested.";
