@@ -8,7 +8,12 @@ use warnings;
 # Renaissance magic, which was in turn inspired by the magical traditions of
 # antiquity. - http://en.wikipedia.org/wiki/Sigil_(magic)
 
-my @friends = ( 'python', 'ruby', 'javascript' );
-say "My friends are @friends.";
-say "My first friend is $friends[0].";
-say "My last friend is $friends[-1].";
+my %sigil_for = (
+    scalar => '$',
+    array  => '@',
+    hash   => '%',
+    sub    => '&',
+    glob   => '*',
+);
+
+say "The sigil for hash is $sigil_for{hash}.";
