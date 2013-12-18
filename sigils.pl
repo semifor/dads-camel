@@ -10,3 +10,5 @@ use warnings;
 
 my @friends = ( 'python', 'ruby', 'javascript' );
 say "My friends are @friends.";
+say "My first friend is $friends[0].";
+say "My last friend is $friends[-1].";
