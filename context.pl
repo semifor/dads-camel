@@ -7,3 +7,6 @@ use warnings;
 my @jennys_list = ( 'eggs', 'milk', 'bread' );
 
 say "Go get @jennys_list";
+
+my $count = @jennys_list;
+say "That's $count items!";
