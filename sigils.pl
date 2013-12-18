@@ -8,5 +8,5 @@ use warnings;
 # Renaissance magic, which was in turn inspired by the magical traditions of
 # antiquity. - http://en.wikipedia.org/wiki/Sigil_(magic)
 
-my $name = 'perl';
-say "My name is $name.";
+my @friends = ( 'python', 'ruby', 'javascript' );
+say "My friends are @friends.";
