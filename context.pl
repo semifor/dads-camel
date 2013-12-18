@@ -17,3 +17,5 @@ sub fetch_row {
 while ( my ($lang, $designer, $year) = fetch_row() ) {
     say "$designer gave us $lang in $year."
 }
+
+# next: truth-or-dare.pl (more beer)
