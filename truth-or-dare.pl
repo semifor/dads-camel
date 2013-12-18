@@ -7,3 +7,4 @@ use warnings;
 # These things are false:
 say "undef is false"           unless undef;
 say "an empty string is false" unless '';
+say "an empty list is false"   unless ();
