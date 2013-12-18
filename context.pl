@@ -11,8 +11,7 @@ my @rows = (
 );
 
 sub fetch_row {
-    return unless @rows;
-    @{ shift @rows };
+    @{ shift @rows or return };
 };
 
 while ( my ($lang, $designer, $year) = fetch_row() ) {
