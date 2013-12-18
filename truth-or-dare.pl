@@ -16,3 +16,4 @@ say 'the string "0" is false'  unless "0";
 say "any non-zero number is true"  if -7;
 say 'a "string" is true'           if "string";
 say 'the string "0e0" is true'     if "0e0";
+say 'the string "0\n" is true'     if "0\n";
