@@ -17,3 +17,7 @@ say "any non-zero number is true"  if -7;
 say 'a "string" is true'           if "string";
 say 'the string "0e0" is true'     if "0e0";
 say 'the string "0\n" is true'     if "0\n";
+
+# DBI (Perl's Database Independent Interface) is a useful example.
+# It returns the number of rows operated on, which may be zero!
+# And it returns undef on failure. We'll simulate it:
