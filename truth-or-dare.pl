@@ -25,3 +25,12 @@ sub db_exec {
     state $rows_updated = [ 100, , 1, "0e0" ];
     return shift @$rows_updated;
 }
+
+for ( 1..4 ) {
+    if ( my $rv = db_exec("delete from beer where stale") ) {
+        say sprintf "deleted %d stale beers", $rv;
+    }
+    else {
+        say "ERROR! deleting beer!";
+    }
+}
