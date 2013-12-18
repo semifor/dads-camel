@@ -7,3 +7,4 @@ use warnings;
 my $marcs_list = ( 'eggs', 'milk', 'bread', 'beer' );
 
 say "I got $marcs_list!";
+say "Doh! Scalar context!";
