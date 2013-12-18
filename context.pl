@@ -4,7 +4,17 @@ use warnings;
 
 # "Taken out of context I must seem so strange." - Ani Difranco
 
-my $marcs_list = ( 'eggs', 'milk', 'bread', 'beer' );
+my @rows = (
+    [ perl   => 'Larry Wall',         1987 ],
+    [ python => 'Guido van Rossum',   1991 ],
+    [ ruby   => 'Yukihiro Matsumoto', 1995 ],
+);
 
-say "I got $marcs_list!";
-say "Doh! Scalar context!";
+sub fetch_row {
+    return undef unless @rows;
+    @{ shift @rows };
+};
+
+while ( my ($lang, $designer, $year) = fetch_row() ) {
+    say "$designer gave us $lang in $year."
+}
