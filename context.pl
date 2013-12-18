@@ -4,9 +4,6 @@ use warnings;
 
 # "Taken out of context I must seem so strange." - Ani Difranco
 
-my @jennys_list = ( 'eggs', 'milk', 'bread' );
+my $marcs_list = ( 'eggs', 'milk', 'bread', 'beer' );
 
-say "Go get @jennys_list";
-
-my $count = @jennys_list;
-say "That's $count items!";
+say "I got $marcs_list!";
