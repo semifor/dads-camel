@@ -14,3 +14,4 @@ say 'the string "0" is false'  unless "0";
 
 # Everything else is true, including:
 say "any non-zero number is true"  if -7;
+say 'a "string" is true'           if "string";
