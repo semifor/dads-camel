@@ -11,7 +11,7 @@ my @rows = (
 );
 
 sub fetch_row {
-    return undef unless @rows;
+    return unless @rows;
     @{ shift @rows };
 };
 
